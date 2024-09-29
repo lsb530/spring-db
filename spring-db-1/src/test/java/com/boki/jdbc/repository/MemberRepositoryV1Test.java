@@ -1,12 +1,10 @@
 package com.boki.jdbc.repository;
 
-import com.boki.jdbc.connection.ConnectionConst;
 import com.boki.jdbc.domain.Member;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import java.util.ArrayList;
 import java.util.List;

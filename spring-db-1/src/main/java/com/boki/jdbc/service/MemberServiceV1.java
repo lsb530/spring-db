@@ -3,7 +3,6 @@ package com.boki.jdbc.service;
 import com.boki.jdbc.domain.Member;
 import com.boki.jdbc.repository.MemberRepositoryV1;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 
