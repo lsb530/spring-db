@@ -3,6 +3,7 @@ package com.boki.jdbc.service;
 import com.boki.jdbc.domain.Member;
 import com.boki.jdbc.repository.MemberRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -28,6 +29,11 @@ public class MemberServiceV4 {
         Member fromMember = memberRepository.findById(fromId);
         Member toMember = memberRepository.findById(toId);
 
+//        try {
+//            memberRepository.update(fromId, fromMember.getMoney() - money);
+//        } catch (DuplicateKeyException e) { // 예외추상화계층
+//            // 복구
+//        }
         memberRepository.update(fromId, fromMember.getMoney() - money);
         validation(toMember);
         memberRepository.update(toId, fromMember.getMoney() + money);
