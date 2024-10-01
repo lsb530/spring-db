@@ -34,7 +34,7 @@ public class JdbcTemplateItemRepositoryV1 implements ItemRepository {
 
     @Override
     public Item save(Item item) {
-        String sql = "INSERT INTO item(item_name, price, quantity) VALUES (?,?,?)";
+        String sql = "INSERT INTO item (item_name, price, quantity) VALUES (?, ?, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         template.update(connection -> {
             // 자동 증가 키
@@ -44,6 +44,7 @@ public class JdbcTemplateItemRepositoryV1 implements ItemRepository {
             ps.setInt(3, item.getQuantity());
             return ps;
         }, keyHolder);
+
         long key = keyHolder.getKey().longValue();
         item.setId(key);
         return item;
