@@ -2,6 +2,7 @@ package com.boki.itemservice;
 
 import com.boki.itemservice.config.JdbcTemplateV1Config;
 import com.boki.itemservice.config.JdbcTemplateV2Config;
+import com.boki.itemservice.config.JdbcTemplateV3Config;
 import com.boki.itemservice.config.MemoryConfig;
 import com.boki.itemservice.repository.ItemRepository;
 import org.springframework.boot.SpringApplication;
@@ -12,7 +13,8 @@ import org.springframework.context.annotation.Profile;
 
 //@Import(MemoryConfig.class)
 //@Import(JdbcTemplateV1Config.class)
-@Import(JdbcTemplateV2Config.class)
+//@Import(JdbcTemplateV2Config.class)
+@Import(JdbcTemplateV3Config.class)
 @SpringBootApplication(scanBasePackages = "com.boki.itemservice.web")
 public class SpringDb2Application {
 
