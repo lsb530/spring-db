@@ -33,6 +33,7 @@ public class SpringDb2Application {
 		return new TestDataInit(itemRepository);
 	}
 
+/*
 	@Bean
 	@Profile("test")
 	public DataSource dataSource() {
@@ -45,4 +46,5 @@ public class SpringDb2Application {
 		dataSource.setPassword("");
 		return dataSource;
 	}
+*/
 }
