@@ -1,9 +1,6 @@
 package com.boki.itemservice;
 
-import com.boki.itemservice.config.JdbcTemplateV1Config;
-import com.boki.itemservice.config.JdbcTemplateV2Config;
-import com.boki.itemservice.config.JdbcTemplateV3Config;
-import com.boki.itemservice.config.MemoryConfig;
+import com.boki.itemservice.config.MyBatisConfig;
 import com.boki.itemservice.repository.ItemRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -11,15 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
-import javax.sql.DataSource;
 
 @Slf4j
 //@Import(MemoryConfig.class)
 //@Import(JdbcTemplateV1Config.class)
 //@Import(JdbcTemplateV2Config.class)
-@Import(JdbcTemplateV3Config.class)
+//@Import(JdbcTemplateV3Config.class)
+@Import(MyBatisConfig.class)
 @SpringBootApplication(scanBasePackages = "com.boki.itemservice.web")
 public class SpringDb2Application {
 
