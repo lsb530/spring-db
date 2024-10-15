@@ -5,11 +5,13 @@ import com.boki.itemservice.repository.ItemRepository;
 import com.boki.itemservice.repository.ItemSearchCond;
 import com.boki.itemservice.repository.ItemUpdateDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @RequiredArgsConstructor
 @Repository
 public class MybatisItemRepository implements ItemRepository {
@@ -18,6 +20,7 @@ public class MybatisItemRepository implements ItemRepository {
 
     @Override
     public Item save(Item item) {
+        log.info("ItemMapper class:{}", itemMapper.getClass());
         itemMapper.save(item);
         return item;
     }
