@@ -1,19 +1,19 @@
 package com.boki.itemservice.config;
 
 import com.boki.itemservice.repository.ItemRepository;
-import com.boki.itemservice.repository.jpa.JpaItemRepositoryV1;
+import com.boki.itemservice.repository.jpa.JpaItemRepositoryV2;
+import com.boki.itemservice.repository.jpa.SpringDataJpaItemRepository;
 import com.boki.itemservice.service.ItemService;
 import com.boki.itemservice.service.ItemServiceV1;
-import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @RequiredArgsConstructor
-public class JpaConfig {
+public class SpringDataJpaConfig {
 
-    private final EntityManager em;
+    private final SpringDataJpaItemRepository springDataJpaItemRepository;
 
     @Bean
     public ItemService itemService() {
@@ -22,7 +22,7 @@ public class JpaConfig {
 
     @Bean
     public ItemRepository itemRepository() {
-        return new JpaItemRepositoryV1(em);
+        return new JpaItemRepositoryV2(springDataJpaItemRepository);
     }
 
 }
