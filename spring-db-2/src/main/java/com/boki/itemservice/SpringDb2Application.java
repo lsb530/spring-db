@@ -1,6 +1,6 @@
 package com.boki.itemservice;
 
-import com.boki.itemservice.config.SpringDataJpaConfig;
+import com.boki.itemservice.config.QuerydslConfig;
 import com.boki.itemservice.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,8 @@ import org.springframework.context.annotation.Profile;
 //@Import(JdbcTemplateV3Config.class)
 //@Import(MyBatisConfig.class)
 //@Import(JpaConfig.class)
-@Import(SpringDataJpaConfig.class)
+//@Import(SpringDataJpaConfig.class)
+@Import(QuerydslConfig.class)
 @SpringBootApplication(scanBasePackages = "com.boki.itemservice.web")
 public class SpringDb2Application {
 
