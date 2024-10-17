@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/spring-db-1" />
     <file type="web" url="file://$PROJECT_DIR$/spring-db-2" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-tx" />
   </component>
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
